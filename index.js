@@ -14,12 +14,9 @@ const xmlRequest = `<?xml version="1.0" encoding="UTF-8"?>
       <EXPORTDATA>
         <REQUESTDATA>
           <TALLYMESSAGE>
-            <COMPANY>
-              <NAME>CITY STYLE GENERAL TRADING</NAME>
-            </COMPANY>
             <PRODUCTDETAILS>
               <PRODUCT>
-                <NAME>*</NAME>
+                <NAME>*</NAME> <!-- Fetch all products -->
               </PRODUCT>
             </PRODUCTDETAILS>
           </TALLYMESSAGE>
