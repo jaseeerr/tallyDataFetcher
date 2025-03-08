@@ -2,9 +2,9 @@ const axios = require('axios');
 const xml2js = require('xml2js');
 
 // URL for TallyPrime's API
-const tallyAPIURL = 'http://localhost:9000';  // Replace with your Tally server URL and port
+const tallyAPIURL = 'http://localhost:9000';  // Default port for TallyPrime API
 
-// XML request to list all companies
+// Correct XML request to list all companies
 const xmlRequest = `<?xml version="1.0" encoding="UTF-8"?>
   <ENVELOPE>
     <HEADER>
@@ -14,7 +14,7 @@ const xmlRequest = `<?xml version="1.0" encoding="UTF-8"?>
       <REQUESTDATA>
         <TALLYMESSAGE>
           <LISTCOMPANIES>
-            <COMPANY></COMPANY>  <!-- Empty tag to list all companies -->
+            <COMPANY />
           </LISTCOMPANIES>
         </TALLYMESSAGE>
       </REQUESTDATA>
@@ -23,9 +23,7 @@ const xmlRequest = `<?xml version="1.0" encoding="UTF-8"?>
 
 // Send POST request to fetch the list of companies
 axios.post(tallyAPIURL, xmlRequest, {
-  headers: {
-    'Content-Type': 'application/xml'
-  }
+  headers: { 'Content-Type': 'application/xml' }
 })
   .then(response => {
     // Log the raw response to check the company list data
