@@ -2,7 +2,7 @@ const axios = require('axios');
 const xml2js = require('xml2js');
 
 // URL for TallyPrime's API
-const tallyAPIURL = 'http://localhost:9000';  // Replace with your Tally server URL and port
+const tallyAPIURL = 'http://localhost:9999';  // Replace with your Tally server URL and port
 
 // XML request to list all companies
 const xmlRequest = `<?xml version="1.0" encoding="UTF-8"?>
