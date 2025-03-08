@@ -32,6 +32,10 @@ axios.post(tallyAPIURL, xmlRequest, {
   }
 })
   .then(response => {
+    // Log the raw response data to check if it's valid XML or contains issues
+    console.log("Raw Response from TallyPrime:");
+    console.log(response.data);  // This will log the raw XML response from TallyPrime
+
     // Parse the XML response into JSON
     xml2js.parseString(response.data, (err, result) => {
       if (err) {
